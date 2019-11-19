@@ -1,0 +1,16 @@
+{
+    "request": [
+        {
+            "title": "登录",
+            "path": "login",
+            "params": {
+                "mobile":"18603093046",
+                "code":"131488",
+            }
+        },
+        {
+            "title": "列表",
+            "path": "list",
+        },
+    ]
+}
