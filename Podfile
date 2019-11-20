@@ -5,7 +5,7 @@ inhibit_all_warnings!
 
 target 'SwiftDemo' do
 
-pod 'Alamofire', '~> 1.1.5'
+pod 'Alamofire', '~> 5.0.0-rc.3'
 pod 'HandyJSON', '~> 5.0.1'
 pod 'SnapKit', '~> 5.0.1'
 
