@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		07D03B612384115700BA6AFE /* NBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D03B5E2384115600BA6AFE /* NBRequest.swift */; };
 		07D03B622384115700BA6AFE /* NBRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D03B5F2384115700BA6AFE /* NBRequestViewController.swift */; };
 		07D03B632384115700BA6AFE /* request.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 07D03B602384115700BA6AFE /* request.geojson */; };
+		07DE596E238531E80087B2C8 /* NBEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE596D238531E80087B2C8 /* NBEnum.swift */; };
+		07DE597023877A430087B2C8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE596F23877A430087B2C8 /* WebViewController.swift */; };
+		07DE597223877B640087B2C8 /* animate.html in Resources */ = {isa = PBXBuildFile; fileRef = 07DE597123877B640087B2C8 /* animate.html */; };
 		8F7B772B74B901D15175C684 /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB491F300461FBF01FA21ED /* Pods_SwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		07D03B5E2384115600BA6AFE /* NBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBRequest.swift; sourceTree = "<group>"; };
 		07D03B5F2384115700BA6AFE /* NBRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBRequestViewController.swift; sourceTree = "<group>"; };
 		07D03B602384115700BA6AFE /* request.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = request.geojson; sourceTree = "<group>"; };
+		07DE596D238531E80087B2C8 /* NBEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBEnum.swift; sourceTree = "<group>"; };
+		07DE596F23877A430087B2C8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		07DE597123877B640087B2C8 /* animate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = animate.html; sourceTree = "<group>"; };
 		29D4C51BB4C7F741D5EB0107 /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		3DB491F300461FBF01FA21ED /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE7D0BA72D30EF9A14E63A47 /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,8 +73,11 @@
 		07D03B46237EB2AF00BA6AFE /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				07DE597123877B640087B2C8 /* animate.html */,
 				07D03B47237EB2AF00BA6AFE /* AppDelegate.swift */,
 				07D03B49237EB2AF00BA6AFE /* ViewController.swift */,
+				07DE596F23877A430087B2C8 /* WebViewController.swift */,
+				07DE596D238531E80087B2C8 /* NBEnum.swift */,
 				07D03B5E2384115600BA6AFE /* NBRequest.swift */,
 				07D03B5F2384115700BA6AFE /* NBRequestViewController.swift */,
 				07D03B602384115700BA6AFE /* request.geojson */,
@@ -94,7 +103,6 @@
 				FE7D0BA72D30EF9A14E63A47 /* Pods-SwiftDemo.debug.xcconfig */,
 				29D4C51BB4C7F741D5EB0107 /* Pods-SwiftDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -162,6 +170,7 @@
 				07D03B4F237EB2B000BA6AFE /* Assets.xcassets in Resources */,
 				07D03B4D237EB2AF00BA6AFE /* Main.storyboard in Resources */,
 				07D03B632384115700BA6AFE /* request.geojson in Resources */,
+				07DE597223877B640087B2C8 /* animate.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +224,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D03B622384115700BA6AFE /* NBRequestViewController.swift in Sources */,
+				07DE597023877A430087B2C8 /* WebViewController.swift in Sources */,
 				07D03B4A237EB2AF00BA6AFE /* ViewController.swift in Sources */,
+				07DE596E238531E80087B2C8 /* NBEnum.swift in Sources */,
 				07D03B48237EB2AF00BA6AFE /* AppDelegate.swift in Sources */,
 				07D03B612384115700BA6AFE /* NBRequest.swift in Sources */,
 			);

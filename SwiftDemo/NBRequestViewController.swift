@@ -85,8 +85,14 @@ class NBRequestViewController: UIViewController {
     
     func requestData() {
         if let url = URL.init(string: request.url) {
-            
-            let _ = AF.request(url, method: HTTPMethod.get, parameters: request.login, encoder: URLEncodedFormParameterEncoder.default, headers: nil, interceptor: nil).response {[weak self] (response) in
+            let headers = HTTPHeaders([
+                HTTPHeader(name: "1", value: "one"),
+                HTTPHeader(name: "2", value: "two"),
+                HTTPHeader(name: "3", value: "three"),
+                HTTPHeader(name: "4", value: "four"),
+                HTTPHeader(name: "1", value: "five")
+                ])
+            let _ = AF.request(url, method: HTTPMethod.get, parameters: request.login, encoder: URLEncodedFormParameterEncoder.default, headers: headers, interceptor: nil).response {[weak self] (response) in
                 self?.response = response.data
                 self?.loadData()
             }

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+@_exported import Alamofire
+@_exported import HandyJSON
+@_exported import SnapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

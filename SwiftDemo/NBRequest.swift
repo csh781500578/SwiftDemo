@@ -7,9 +7,6 @@
 //
 
 import UIKit
-@_exported import Alamofire
-@_exported import HandyJSON
-@_exported import SnapKit
 
 class NBRequest: HandyJSON {
     var title: String?
@@ -31,9 +28,14 @@ class NBRequest: HandyJSON {
     required init() {
         
     }
+    
+    subscript(_ name : String) -> Int {
+        return 333
+    }
 }
 
 struct Login: Encodable {
     var mobile: String?
     var code: String?
+    
 }

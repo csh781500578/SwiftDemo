@@ -38,6 +38,25 @@ class ViewController: UIViewController {
         //
         //            // Make use of fetched metadata.
         //        }
+        
+        let headers = HTTPHeaders([
+            HTTPHeader(name: "1", value: "one"),
+            HTTPHeader(name: "2", value: "two"),
+            HTTPHeader(name: "3", value: "three"),
+            HTTPHeader(name: "4", value: "four"),
+            HTTPHeader(name: "4", value: "five")
+            ])
+        let _ = headers.dictionary
+        
+        print("最后一行")
+        var name = "hanry"
+        change(&name)
+        print(name)
+    }
+    
+    func change(_ name: inout String) {
+        name += " chen"
+        print(name)
     }
     
     func loadData() {
@@ -68,8 +87,8 @@ class ViewController: UIViewController {
     }
     
     func pushToRequestVC(_ request: NBRequest) {
-        let vc = NBRequestViewController()
-        vc.request = request
+        let vc = WebViewController()
+        
         navigationController?.pushViewController(vc, animated: true)
     }
     

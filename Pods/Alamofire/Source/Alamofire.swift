@@ -3,46 +3,46 @@
 //
 //  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
 //
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
+//在此，我们免费向任何获得副本的人提供许可
+//本软件及其相关文档文件(下称“软件”)，以供处理
+//在软件中不受限制，包括但不限于权利
+//使用、复制、修改、合并、发布、分发、再许可和/或出售
+//“软件”的副本，并允许“软件”的所有人使用
+//提供这样做，但须符合下列条件:
 //
-//  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.
+//上述版权公告及本许可公告均应包括在内
+//软件的所有拷贝或大部分。
 //
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-//  THE SOFTWARE.
+//软件是“按原样”提供的，没有任何形式的明示或明示的保证
+//默示，包括但不限于适销性保证，
+//适用于特定目的和不侵权。在任何情况下都不能
+//作者或版权持有者对任何索赔、损害赔偿或其他责任
+//责任，无论在合同诉讼、侵权诉讼或其他诉讼中，
+//脱离或与软件或使用或其他交易有关
+//软件。
 //
 
 import Foundation
 
-/// Global namespace containing API for the `default` `Session` instance.
+///全局命名空间，包含“默认”“会话”实例的API。
 public enum AF {
-    /// Current Alamofire version. Necessary since SPM doesn't use dynamic libraries. Plus this will be more accurate.
+    ///当前的Alamofire版本。必要的，因为SPM不使用动态库。加上这个会更准确。
     static let version = "5.0.0-rc.3"
 
-    // MARK: - Data Request
-
-    /// Creates a `DataRequest` using `Session.default` to retrieve the contents of the specified `url` using the
-    /// `method`, `parameters`, `encoding`, and `headers` provided.
+    //标记:-数据请求
+        
+    ///使用“Session.default”创建一个“DataRequest”来检索指定的“url”的内容
+    /// '方法'，'参数'，'编码'，和'头'提供。
     ///
-    /// - Parameters:
-    ///   - url:           The `URLConvertible` value.
-    ///   - method:        The `HTTPMethod`, `.get` by default.
-    ///   - parameters:    The `Parameters`, `nil` by default.
-    ///   - encoding:      The `ParameterEncoding`, `URLEncoding.default` by default.
-    ///   - headers:       The `HTTPHeaders`, `nil` by default.
-    ///   - interceptor:   The `RequestInterceptor`, `nil` by default.
+    /// -参数:
+    /// - url: ' URLConvertible '值。
+    /// -方法:' HTTPMethod '， '。默认情况下得到的。
+    /// -参数:' parameters '， ' nil '默认。
+    /// -编码:' ParameterEncoding '， ' URLEncoding.default '默认。
+    /// - header: ' HTTPHeaders '， ' nil '默认。
+    /// -拦截器:默认为‘RequestInterceptor’，‘nil’。
     ///
-    /// - Returns: The created `DataRequest`.
+    /// -返回:创建的“DataRequest”。
     public static func request(_ url: URLConvertible,
                                method: HTTPMethod = .get,
                                parameters: Parameters? = nil,
@@ -57,18 +57,14 @@ public enum AF {
                                        interceptor: interceptor)
     }
 
-    /// Creates a `DataRequest` using `Session.default` to retrieve the contents of the specified `url` using the
-    /// `method`, `parameters`, `encoding`, and `headers` provided.
+    /// Creates a ' DataRequest ' using ' Session.默认' to retrieve ' the special ' url ' using the
+    ///“方法”、“parameters”、“encoding”和“headers”提供。
     ///
-    /// - Parameters:
-    ///   - url:           The `URLConvertible` value.
-    ///   - method:        The `HTTPMethod`, `.get` by default.
-    ///   - parameters:    The `Encodable` parameters, `nil` by default.
-    ///   - encoding:      The `ParameterEncoder`, `URLEncodedFormParameterEncoder.default` by default.
-    ///   - headers:       The `HTTPHeaders`, `nil` by default.
-    ///   - interceptor:   The `RequestInterceptor`, `nil` by default.
-    ///
-    /// - Returns: The created `DataRequest`.
+    /// / - Parameters: url: url敞篷车价值。- HTTPMethod。默认完成。
+    /// - parameters:默认情况下的“Encodable”parameters。
+    /// -编码:
+    /// -标题:默认的“httpheder”，“nil”。 拦截器:默认的“拦截器”，默认的“零”。
+    /// 创造“约会”。
     public static func request<Parameters: Encodable>(_ url: URLConvertible,
                                                       method: HTTPMethod = .get,
                                                       parameters: Parameters? = nil,
@@ -83,35 +79,35 @@ public enum AF {
                                        interceptor: interceptor)
     }
 
-    /// Creates a `DataRequest` using `Session.default` to execute the specified `urlRequest`.
+    ///使用Session.default创建一个' DataRequest '来执行指定的' urlRequest '。
     ///
-    /// - Parameters:
-    ///   - urlRequest:    The `URLRequestConvertible` value.
-    ///   - interceptor:   The `RequestInterceptor`, `nil` by default.
+    /// -参数:
+    /// - urlRequest: ' URLRequestConvertible '的值。
+    /// -拦截器:默认为‘RequestInterceptor’，‘nil’。
     ///
-    /// - Returns: The created `DataRequest`.
+    /// -返回:创建的“DataRequest”。
     public static func request(_ urlRequest: URLRequestConvertible, interceptor: RequestInterceptor? = nil) -> DataRequest {
         return Session.default.request(urlRequest, interceptor: interceptor)
     }
 
-    // MARK: - Download Request
-
-    /// Creates a `DownloadRequest` using `Session.default` to download the contents of the specified `url` to
-    /// the provided `destination` using the `method`, `parameters`, `encoding`, and `headers` provided.
+    //标记:-下载请求
+    
+    ///创建一个' DownloadRequest '，使用' Session.default '将指定的' url '的内容下载到
+    ///提供的“目的地”使用“方法”，“参数”，“编码”，和“头”提供。
     ///
-    /// If `destination` is not specified, the download will be moved to a temporary location determined by Alamofire.
+    ///如果没有指定“destination”，下载将被移动到Alamofire确定的临时位置。
     ///
-    /// - Parameters:
-    ///   - url:           The `URLConvertible` value.
-    ///   - method:        The `HTTPMethod`, `.get` by default.
-    ///   - parameters:    The `Parameters`, `nil` by default.
-    ///   - encoding:      The `ParameterEncoding`, `URLEncoding.default` by default.
-    ///   - headers:       The `HTTPHeaders`, `nil` by default.
-    ///   - interceptor:   The `RequestInterceptor`, `nil` by default.
-    ///   - destination:   The `DownloadRequest.Destination` closure used the determine the destination of the
-    ///                    downloaded file. `nil` by default.
+    /// -参数:
+    /// - url: ' URLConvertible '值。
+    /// -方法:' HTTPMethod '， '。默认情况下得到的。
+    /// -参数:' parameters '， ' nil '默认。
+    /// -编码:' ParameterEncoding '， ' URLEncoding.default '默认。
+    /// - header: ' HTTPHeaders '， ' nil '默认。
+    /// -拦截器:默认为‘RequestInterceptor’，‘nil’。
+    /// -下载请求。“目的地”的闭包使用“确定目的地”的
+    ///下载文件。默认“零”。
     ///
-    /// - Returns: The created `DownloadRequest`.
+    /// -返回:创建的“下载请求”。
     public static func download(_ url: URLConvertible,
                                 method: HTTPMethod = .get,
                                 parameters: Parameters? = nil,
@@ -128,23 +124,23 @@ public enum AF {
                                         to: destination)
     }
 
-    /// Creates a `DownloadRequest` using `Session.default` to download the contents of the specified `url` to the
-    /// provided `destination` using the `method`, encodable `parameters`, `encoder`, and `headers` provided.
+    ///创建一个' DownloadRequest '，使用' Session.default '将指定的' url '的内容下载到
+    ///使用“方法”提供“目的地”，提供可编码的“参数”、“编码器”和“头文件”。
     ///
-    /// - Note: If `destination` is not specified, the download will be moved to a temporary location determined by
-    ///         Alamofire.
+    /// -注意:如果没有指定“destination”，下载将被移动到由
+    /// Alamofire。
     ///
-    /// - Parameters:
-    ///   - url:           The `URLConvertible` value.
-    ///   - method:        The `HTTPMethod`, `.get` by default.
-    ///   - parameters:    The `Encodable` parameters, `nil` by default.
-    ///   - encoder:       The `ParameterEncoder`, `URLEncodedFormParameterEncoder.default` by default.
-    ///   - headers:       The `HTTPHeaders`, `nil` by default.
-    ///   - interceptor:   The `RequestInterceptor`, `nil` by default.
-    ///   - destination:   The `DownloadRequest.Destination` closure used the determine the destination of the
-    ///                    downloaded file. `nil` by default.
+    /// -参数:
+    /// - url: ' URLConvertible '值。
+    /// -方法:' HTTPMethod '， '。默认情况下得到的。
+    /// -参数:“可编码的”参数，默认为“nil”。
+    /// -编码器:' ParameterEncoder '， ' URLEncodedFormParameterEncoder.default '默认。
+    /// - header: ' HTTPHeaders '， ' nil '默认。
+    /// -拦截器:默认为‘RequestInterceptor’，‘nil’。
+    /// -下载请求。“目的地”的闭包使用“确定目的地”的
+    ///下载文件。默认“零”。
     ///
-    /// - Returns: The created `DownloadRequest`.
+    /// -返回:创建的“下载请求”。
     public static func download<Parameters: Encodable>(_ url: URLConvertible,
                                                        method: HTTPMethod = .get,
                                                        parameters: Parameters? = nil,
