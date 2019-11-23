@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         }
         
         self.loadData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
