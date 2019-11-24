@@ -11,7 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var list : [NBRequest] = []
+    var model : NBVCModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,98 +28,93 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //        let metadataProvider = LPMetadataProvider()
-        //        let url = URL(string: "https://www.apple.com/ipad")!
-        //
-        //        metadataProvider.startFetchingMetadata(for: url) { metadata, error in
-        //            if error != nil {
-        //                // The fetch failed; handle the error.
-        //                return
-        //            }
-        //
-        //            // Make use of fetched metadata.
-        //        }
-        
-        let headers = HTTPHeaders([
-            HTTPHeader(name: "1", value: "one"),
-            HTTPHeader(name: "2", value: "two"),
-            HTTPHeader(name: "3", value: "three"),
-            HTTPHeader(name: "4", value: "four"),
-            HTTPHeader(name: "4", value: "five")
-            ])
-        let _ = headers.dictionary
-        
-        print("最后一行")
-        var name = "hanry"
-        change(&name)
-        print(name)
-    }
-    
-    func change(_ name: inout String) {
-        name += " chen"
-        print(name)
     }
     
     func loadData() {
-        guard let filePath = Bundle.main.path(forResource: "request", ofType: "geojson") else {
+        defer {
+            reloadData()
+        }
+        
+        guard let json = NBFileClient.default.jsonData("viewController.geojson") else {
             return
         }
-        
-        do {
-            guard let data = NSData.init(contentsOfFile: filePath) else {
-                return
-            }
-            let diction = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions.mutableContainers)
-            
-            guard let json = diction as? [String: Any] else {
-                return
-            }
-            if let array = json["request"] as? [[String: Any]] {
-                for (obj) in array {
-                    if let request = NBRequest.deserialize(from: obj) {
-                        list.append(request)
-                    }
-                }
-            }
-        } catch {
+
+        guard let data = json["data"] as? [String: AnyObject] else {
+            return
         }
-        
+        model = NBVCModel.deserialize(from: data)
+    }
+    
+    func reloadData() {
         tableView.reloadData()
     }
     
-    func pushToRequestVC(_ request: NBRequest) {
-        let vc = WebViewController()
-        
-        navigationController?.pushViewController(vc, animated: true)
+    func pushToVC(_ model: NBVCObjcModel?) {
+        guard let value = model else {
+            return
+        }
+        if let vc = value.viewController {
+            if let cls = NSClassFromString(vc) as? UIViewController.Type {
+                let controller = cls.init()
+                navigationController?.pushViewController(controller, animated: true)
+            }
+        }
     }
     
     lazy var tableView: UITableView = {
         let view = UITableView.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: UITableView.Style.grouped)
         view.rowHeight = 60
+        view.sectionHeaderHeight = 60
+        view.sectionFooterHeight = 0.5
         view.delegate = self
         view.dataSource = self
+        view.separatorStyle = .none
         return view
     }()
 }
 
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return model?.messages?.count ?? 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        let message = model?.messages?[section]
+        if message?.open == false {
+            return 0
+        }
+        return message?.list?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        let message = model?.messages?[section]
+        if let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? NBSectionHeaderView {
+            view.model = message
+        }
+        let view = NBSectionHeaderView(reuseIdentifier: "header")
+        view.model = message
+        view.didSelectViewBlock = {[weak self] in
+            self?.reloadData()
+        }
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let request = list[indexPath.row]
+        let message = model?.messages?[indexPath.section]
+        let objc = message?.list?[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = request.title
+        cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.text = objc?.name
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        let request = list[indexPath.row]
-        pushToRequestVC(request)
+        let message = model?.messages?[indexPath.section]
+        let objc = message?.list?[indexPath.row]
+        pushToVC(objc)
     }
 }
 

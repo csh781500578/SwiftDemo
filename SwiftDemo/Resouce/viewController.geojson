@@ -1,0 +1,57 @@
+{
+    "data" : {
+        "messages" : [
+        {
+            "date": "2019年11月24日",
+            "list": [
+                {
+                    "name": "Vision",
+                    "viewController": "SwiftDemo.NBVisionViewController"
+                },
+                {
+                    "name": "Combine",
+                    "viewController": "SwiftDemo.NBCombineViewController"
+                },
+                {
+                    "name": "CoreSpotlight",
+                    "viewController": "SwiftDemo.NBCoreSpotlightViewController"
+                },
+                {
+                    "name": "Event",
+                    "viewController": "SwiftDemo.NBEventViewController"
+                },
+                {
+                    "name": "NBEventUI",
+                    "viewController": "SwiftDemo.NBEventUIViewController"
+                }
+            ],
+        },
+            {
+                "date": "2019年11月23日",
+                "list": [
+                    {
+                        "name": "PDFKit",
+                        "viewController": "SwiftDemo.NBPDFViewController"
+                    },
+                    {
+                        "name": "BackgroundTasks",
+                        "viewController": "SwiftDemo.NBBGTasksViewController"
+                    },
+                    {
+                        "name": "Business Chat",
+                        "viewController": "SwiftDemo.NBBusChatViewController"
+                    },
+                    {
+                        "name": "Messages",
+                        "viewController": "SwiftDemo.NBMessagesViewController"
+                    },
+                    {
+                        "name": "AVKit",
+                        "viewController": "SwiftDemo.NBAVViewController"
+                    }
+                ],
+            },
+        ],
+    }
+    
+}

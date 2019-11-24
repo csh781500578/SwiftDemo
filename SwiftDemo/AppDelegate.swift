@@ -10,40 +10,67 @@ import UIKit
 @_exported import Alamofire
 @_exported import HandyJSON
 @_exported import SnapKit
+import BackgroundTasks
+
+fileprivate let backgroundTaskIdentifier = "com.nshipster.example.task.refresh"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if #available(iOS 13.0, *) {
+            BGTaskScheduler.shared.register(forTaskWithIdentifier: backgroundTaskIdentifier, using: nil) { task in
+                self.handleAppRefresh(task: task as! BGAppRefreshTask)
+            }
+        }
+
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-    }
-
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        scheduleAppRefresh()
     }
 
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
+    lazy var backgroundURLSession : URLSession = {
+        let configuration = URLSessionConfiguration.background(withIdentifier: "com.nshipster.url-session.background")
+        configuration.isDiscretionary = true
+        configuration.timeoutIntervalForRequest = 30
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
+        return URLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
+    }()
 
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
+    func scheduleAppRefresh() {
+        if #available(iOS 13.0, *) {
+            let request = BGAppRefreshTaskRequest(identifier: backgroundTaskIdentifier)
+            request.earliestBeginDate = Date(timeIntervalSinceNow: 60 * 10)
 
+            do {
+                try BGTaskScheduler.shared.submit(request)
+            } catch {
+                print("Couldn't schedule app refresh: \(error)")
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
+    @available(iOS 13.0, *)
+    func handleAppRefresh(task: BGAppRefreshTask) {
+        scheduleAppRefresh()
+
+        let url: URL = URL(fileReferenceLiteralResourceName: "")
+        var dataTask = backgroundURLSession.dataTask(with: url) { (data, response, error) in
+            
+            task.setTaskCompleted(success: true)
+        }
+
+        task.expirationHandler = {
+            dataTask.cancel()
+        }
+
+        dataTask.resume()
+    }
 
 }
-

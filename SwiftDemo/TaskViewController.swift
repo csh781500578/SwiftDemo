@@ -22,6 +22,12 @@ class TaskViewController: UIViewController {
         
     }
     
+    func pushToRequestVC(_ request: NBRequest) {
+        let vc = WebViewController()
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     lazy var tableView: UITableView = {
         let view = UITableView.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: UITableView.Style.grouped)
         view.rowHeight = 60
@@ -48,7 +54,7 @@ extension TaskViewController : NBTableDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let request = list[indexPath.row]
-        
+        pushToRequestVC(request)
     }
 }
 

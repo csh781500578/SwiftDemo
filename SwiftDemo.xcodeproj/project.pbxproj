@@ -20,6 +20,21 @@
 		07DE597223877B640087B2C8 /* animate.html in Resources */ = {isa = PBXBuildFile; fileRef = 07DE597123877B640087B2C8 /* animate.html */; };
 		0D53916D2388E9A400434870 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D53916C2388E9A400434870 /* TaskViewController.swift */; };
 		0D53916F2388E9F900434870 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D53916E2388E9F900434870 /* Tools.swift */; };
+		0D5391732389088F00434870 /* NBVCModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5391722389088F00434870 /* NBVCModel.swift */; };
+		0D53917623890B0D00434870 /* NBPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D53917523890B0D00434870 /* NBPDFViewController.swift */; };
+		0D53917823890B2600434870 /* NBBGTasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D53917723890B2600434870 /* NBBGTasksViewController.swift */; };
+		0D53917A23890B4300434870 /* NBBusChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D53917923890B4200434870 /* NBBusChatViewController.swift */; };
+		0D53917C23890B5300434870 /* NBMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D53917B23890B5300434870 /* NBMessagesViewController.swift */; };
+		0D53917E23890B6500434870 /* NBAVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D53917D23890B6500434870 /* NBAVViewController.swift */; };
+		0D53917F23890F0500434870 /* viewController.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 0D53916B2388DF3100434870 /* viewController.geojson */; };
+		0D5391822389103100434870 /* NBSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5391812389103100434870 /* NBSectionHeaderView.swift */; };
+		0D539184238912E000434870 /* danke.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0D539183238912E000434870 /* danke.pdf */; };
+		0D5391862389171600434870 /* NBFileClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5391852389171600434870 /* NBFileClient.swift */; };
+		0D539189238A19FD00434870 /* NBVisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D539188238A19FD00434870 /* NBVisionViewController.swift */; };
+		0D53918B238A1A0D00434870 /* NBCombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D53918A238A1A0D00434870 /* NBCombineViewController.swift */; };
+		0D53918D238A1A2200434870 /* NBCoreSpotlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D53918C238A1A2200434870 /* NBCoreSpotlightViewController.swift */; };
+		0D53918F238A1A3200434870 /* NBEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D53918E238A1A3200434870 /* NBEventViewController.swift */; };
+		0D539191238A7CE700434870 /* NBEventUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D539190238A7CE700434870 /* NBEventUIViewController.swift */; };
 		8F7B772B74B901D15175C684 /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DB491F300461FBF01FA21ED /* Pods_SwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,9 +52,23 @@
 		07DE596D238531E80087B2C8 /* NBEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBEnum.swift; sourceTree = "<group>"; };
 		07DE596F23877A430087B2C8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		07DE597123877B640087B2C8 /* animate.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = animate.html; sourceTree = "<group>"; };
-		0D53916B2388DF3100434870 /* Directions.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Directions.geojson; sourceTree = "<group>"; };
+		0D53916B2388DF3100434870 /* viewController.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = viewController.geojson; sourceTree = "<group>"; };
 		0D53916C2388E9A400434870 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		0D53916E2388E9F900434870 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		0D5391722389088F00434870 /* NBVCModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBVCModel.swift; sourceTree = "<group>"; };
+		0D53917523890B0D00434870 /* NBPDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBPDFViewController.swift; sourceTree = "<group>"; };
+		0D53917723890B2600434870 /* NBBGTasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBBGTasksViewController.swift; sourceTree = "<group>"; };
+		0D53917923890B4200434870 /* NBBusChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBBusChatViewController.swift; sourceTree = "<group>"; };
+		0D53917B23890B5300434870 /* NBMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBMessagesViewController.swift; sourceTree = "<group>"; };
+		0D53917D23890B6500434870 /* NBAVViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBAVViewController.swift; sourceTree = "<group>"; };
+		0D5391812389103100434870 /* NBSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBSectionHeaderView.swift; sourceTree = "<group>"; };
+		0D539183238912E000434870 /* danke.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = danke.pdf; sourceTree = "<group>"; };
+		0D5391852389171600434870 /* NBFileClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBFileClient.swift; sourceTree = "<group>"; };
+		0D539188238A19FD00434870 /* NBVisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBVisionViewController.swift; sourceTree = "<group>"; };
+		0D53918A238A1A0D00434870 /* NBCombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBCombineViewController.swift; sourceTree = "<group>"; };
+		0D53918C238A1A2200434870 /* NBCoreSpotlightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBCoreSpotlightViewController.swift; sourceTree = "<group>"; };
+		0D53918E238A1A3200434870 /* NBEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBEventViewController.swift; sourceTree = "<group>"; };
+		0D539190238A7CE700434870 /* NBEventUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBEventUIViewController.swift; sourceTree = "<group>"; };
 		29D4C51BB4C7F741D5EB0107 /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		3DB491F300461FBF01FA21ED /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE7D0BA72D30EF9A14E63A47 /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,13 +107,16 @@
 		07D03B46237EB2AF00BA6AFE /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
-				0D5391712389005800434870 /* Resouce */,
-				0D5391702388EA9B00434870 /* Model */,
 				07D03B47237EB2AF00BA6AFE /* AppDelegate.swift */,
 				07D03B49237EB2AF00BA6AFE /* ViewController.swift */,
 				0D53916C2388E9A400434870 /* TaskViewController.swift */,
 				07DE596F23877A430087B2C8 /* WebViewController.swift */,
 				07D03B5F2384115700BA6AFE /* NBRequestViewController.swift */,
+				0D53918023890FFC00434870 /* CustomView */,
+				0D5391712389005800434870 /* Resouce */,
+				0D5391702388EA9B00434870 /* Model */,
+				0D539187238A19DE00434870 /* 2019_11_24 */,
+				0D53917423890AD900434870 /* 2019_11_23 */,
 				07D03B4B237EB2AF00BA6AFE /* Main.storyboard */,
 				07D03B4E237EB2B000BA6AFE /* Assets.xcassets */,
 				07D03B50237EB2B000BA6AFE /* LaunchScreen.storyboard */,
@@ -99,6 +131,8 @@
 				07DE596D238531E80087B2C8 /* NBEnum.swift */,
 				0D53916E2388E9F900434870 /* Tools.swift */,
 				07D03B5E2384115600BA6AFE /* NBRequest.swift */,
+				0D5391722389088F00434870 /* NBVCModel.swift */,
+				0D5391852389171600434870 /* NBFileClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -106,11 +140,44 @@
 		0D5391712389005800434870 /* Resouce */ = {
 			isa = PBXGroup;
 			children = (
-				0D53916B2388DF3100434870 /* Directions.geojson */,
+				0D539183238912E000434870 /* danke.pdf */,
+				0D53916B2388DF3100434870 /* viewController.geojson */,
 				07D03B602384115700BA6AFE /* request.geojson */,
 				07DE597123877B640087B2C8 /* animate.html */,
 			);
 			path = Resouce;
+			sourceTree = "<group>";
+		};
+		0D53917423890AD900434870 /* 2019_11_23 */ = {
+			isa = PBXGroup;
+			children = (
+				0D53917523890B0D00434870 /* NBPDFViewController.swift */,
+				0D53917723890B2600434870 /* NBBGTasksViewController.swift */,
+				0D53917923890B4200434870 /* NBBusChatViewController.swift */,
+				0D53917B23890B5300434870 /* NBMessagesViewController.swift */,
+				0D53917D23890B6500434870 /* NBAVViewController.swift */,
+			);
+			path = 2019_11_23;
+			sourceTree = "<group>";
+		};
+		0D53918023890FFC00434870 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				0D5391812389103100434870 /* NBSectionHeaderView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		0D539187238A19DE00434870 /* 2019_11_24 */ = {
+			isa = PBXGroup;
+			children = (
+				0D539188238A19FD00434870 /* NBVisionViewController.swift */,
+				0D53918A238A1A0D00434870 /* NBCombineViewController.swift */,
+				0D53918C238A1A2200434870 /* NBCoreSpotlightViewController.swift */,
+				0D53918E238A1A3200434870 /* NBEventViewController.swift */,
+				0D539190238A7CE700434870 /* NBEventUIViewController.swift */,
+			);
+			path = 2019_11_24;
 			sourceTree = "<group>";
 		};
 		51E096B1CEC04EC715067D89 /* Frameworks */ = {
@@ -193,7 +260,9 @@
 				07D03B52237EB2B000BA6AFE /* LaunchScreen.storyboard in Resources */,
 				07D03B4F237EB2B000BA6AFE /* Assets.xcassets in Resources */,
 				07D03B4D237EB2AF00BA6AFE /* Main.storyboard in Resources */,
+				0D539184238912E000434870 /* danke.pdf in Resources */,
 				07D03B632384115700BA6AFE /* request.geojson in Resources */,
+				0D53917F23890F0500434870 /* viewController.geojson in Resources */,
 				07DE597223877B640087B2C8 /* animate.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,13 +316,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D539189238A19FD00434870 /* NBVisionViewController.swift in Sources */,
 				07D03B622384115700BA6AFE /* NBRequestViewController.swift in Sources */,
+				0D53917C23890B5300434870 /* NBMessagesViewController.swift in Sources */,
+				0D53917A23890B4300434870 /* NBBusChatViewController.swift in Sources */,
+				0D5391822389103100434870 /* NBSectionHeaderView.swift in Sources */,
 				0D53916D2388E9A400434870 /* TaskViewController.swift in Sources */,
 				07DE597023877A430087B2C8 /* WebViewController.swift in Sources */,
+				0D53918F238A1A3200434870 /* NBEventViewController.swift in Sources */,
 				07D03B4A237EB2AF00BA6AFE /* ViewController.swift in Sources */,
+				0D53917823890B2600434870 /* NBBGTasksViewController.swift in Sources */,
+				0D539191238A7CE700434870 /* NBEventUIViewController.swift in Sources */,
 				07DE596E238531E80087B2C8 /* NBEnum.swift in Sources */,
+				0D53918B238A1A0D00434870 /* NBCombineViewController.swift in Sources */,
 				07D03B48237EB2AF00BA6AFE /* AppDelegate.swift in Sources */,
+				0D53917E23890B6500434870 /* NBAVViewController.swift in Sources */,
 				07D03B612384115700BA6AFE /* NBRequest.swift in Sources */,
+				0D53918D238A1A2200434870 /* NBCoreSpotlightViewController.swift in Sources */,
+				0D5391862389171600434870 /* NBFileClient.swift in Sources */,
+				0D53917623890B0D00434870 /* NBPDFViewController.swift in Sources */,
+				0D5391732389088F00434870 /* NBVCModel.swift in Sources */,
 				0D53916F2388E9F900434870 /* Tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R7R5X9K82P;
 				INFOPLIST_FILE = SwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -423,6 +506,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R7R5X9K82P;
 				INFOPLIST_FILE = SwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
